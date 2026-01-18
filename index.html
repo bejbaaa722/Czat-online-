@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magiczny Portal</title>
+<style>
+  @keyframes fadeIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+  body {
+    margin:0;
+    padding:0;
+    font-family:'Arial', sans-serif;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(-45deg,#4b006e,#8e2de2,#ff00ff,#ff66ff);
+    background-size:400% 400%;
+    animation:bgMove 20s ease infinite;
+    text-align:center;
+    color:#fff;
+  }
+
+  h1 {
+    font-size:3em;
+    text-shadow:0 0 10px #fff,0 0 20px #ff00ff;
+    animation:fadeIn 1.5s ease forwards;
+    margin:0;
+  }
+
+  p.slogan {
+    font-size:1.5em;
+    margin:10px 0 40px 0;
+    text-shadow:0 0 5px #fff;
+    animation:fadeIn 2s ease forwards;
+  }
+
+  .btn-chat {
+    padding:15px 40px;
+    font-size:1.2em;
+    border:none;
+    border-radius:10px;
+    background:#ff00ff;
+    color:#fff;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    animation:fadeIn 2.5s ease forwards, pulse 2s infinite;
+  }
+
+  .btn-chat:hover { background:#e600e6; transform:scale(1.1); }
+
+  @keyframes pulse {
+    0%,100%{ box-shadow:0 0 15px #ff00ff,0 0 30px #ff00ff inset; }
+    50%{ box-shadow:0 0 25px #ff66ff,0 0 50px #ff66ff inset; }
+  }
+
+  @keyframes bgMove {
+    0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}
+  }
+
+  @media(max-width:600px){
+    h1{font-size:2em;}
+    p.slogan{font-size:1em;}
+    .btn-chat{padding:12px 25px;font-size:1em;}
+  }
+</style>
+</head>
+<body>
+
+<h1>Magiczny Portal</h1>
+<p class="slogan">Miejsce, gdzie magia spotyka ludzi</p>
+<button class="btn-chat" onclick="enterChat()">Wejdź do czatu</button>
+
+<script>
+function enterChat(){
+  window.location.href="chat/index.html";
+}
+</script>
+
+</body>
+</html>
